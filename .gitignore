@@ -1,1 +1,1 @@
-.env
+@ .env`n.env.local`n.env.*.local`n`n# Python`n__pycache__/`n*.py[cod]`n*$py.class`n*.so`n.Python`n*.egg-info/`ndist/`nbuild/`neggs/`n*.egg`npip-log.txt`npip-delete-this-directory.txt`n`n# Virtual environments`n.venv/`nvenv/`nENV/`nenv/`n`n# IDE`n.vscode/`n.idea/`n*.swp`n*.swo`n*~`n`n# OS`n.DS_Store`nThumbs.db`n`n# Secrets/keys`n*.pem`n*.key`ncredentials.json`n`n# Logs`n*.log`nlogs/`n`n# Streamlit`n.streamlit/config.toml`n
