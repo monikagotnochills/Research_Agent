@@ -4,8 +4,10 @@ from bs4 import BeautifulSoup
 from tavily import TavilyClient
 import os
 from dotenv import load_dotenv
+from pathlib import Path
 
-load_dotenv()
+_env_path = Path(__file__).resolve().parent.parent / ".env"
+load_dotenv(_env_path)
 
 tavily = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 

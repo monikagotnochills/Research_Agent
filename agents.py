@@ -1,11 +1,14 @@
-from langchain.agents import create_agent
+from langgraph.prebuilt import create_react_agent
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from tools import web_search , scrape_url 
 from dotenv import load_dotenv
+from pathlib import Path
 
-load_dotenv()
+# Load .env from project root (one level up from this file)
+_env_path = Path(__file__).resolve().parent.parent / ".env"
+load_dotenv(_env_path)
 
 
 
@@ -18,7 +21,7 @@ llm = ChatOpenAI(
 )
 #1st agent 
 def build_search_agent():
-    return create_agent(
+    return create_react_agent(
         model = llm,
         tools= [web_search]
     )
@@ -26,7 +29,7 @@ def build_search_agent():
 #2nd agent 
 
 def build_reader_agent():
-    return create_agent(
+    return create_react_agent(
         model = llm,
         tools = [scrape_url]
     )

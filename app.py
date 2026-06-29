@@ -444,6 +444,32 @@ div[class*="st-key-chip_"] button:hover {
 .report-panel .panel-label.green{ color:var(--green); }
 
 /* Professional report typography */
+/* Ensure generated research text is dark, readable, and slightly larger */
+.report-panel *{ color:#0d0d0d !important; }
+
+.report-panel p{
+  font-family:'Source Serif 4','Georgia',serif;
+  font-size:1.05rem;
+  color:#0d0d0d;
+  line-height:1.78;
+  margin-bottom:.8rem;
+}
+.report-panel li{
+  font-family:'Source Serif 4','Georgia',serif;
+  font-size:1rem;
+  color:#0d0d0d;
+  line-height:1.72;
+  margin-bottom:.3rem;
+}
+.report-panel code{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.86rem;
+  background:rgba(26,115,232,0.06);
+  padding:2px 6px;
+  border-radius:4px;
+  color:#0d0d0d;
+}
+
 .report-panel h1{
   font-family:'Playfair Display','Georgia',serif;
   font-size:1.65rem; font-weight:800; color:#0d0d0d;
@@ -1031,9 +1057,14 @@ elif st.session_state.page == "pipeline":
             loader_container = st.container()
             with loader_container:
                 render_cube_loader()
-            
+
             # Active status spinner inside the right column below the loader
+            # (kept separate so Streamlit's UI notifications don't appear above)
             status_container = st.empty()
+            # Push the status text further down so it sits clearly below the cube loader
+            st.markdown('<div style="height:90px"></div>', unsafe_allow_html=True)
+
+
 
         # ── Execute pipeline ──
         results = {}
