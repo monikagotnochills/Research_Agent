@@ -27,7 +27,9 @@ https://dwight-ai.streamlit.app/
 </p>
 
 ---
-![Uploading image.png…]()
+<img width="1620" height="437" alt="image" src="https://github.com/user-attachments/assets/fc2eac1d-a82d-4496-8ef3-2f8068d4bb4a" />
+
+
 
 ## 🚀 Features
 
